@@ -83,7 +83,7 @@ class Articles extends Equatable{
   List<Object?> get props => [source, author, title, description, url, urlToImage, publishedAt, content];
 }
 
-class Source {
+class Source extends Equatable{
   String? id;
   String? name;
 
@@ -100,4 +100,7 @@ class Source {
     data['name'] = name;
     return data;
   }
+  
+  @override
+  List<Object?> get props => [id, name];
 }

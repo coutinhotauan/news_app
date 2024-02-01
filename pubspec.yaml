@@ -15,6 +15,7 @@ dependencies:
   dartz: ^0.10.1
   dio: ^5.4.0
   mockito: ^5.4.4
+  http: ^1.1.0
 
 dev_dependencies:
   flutter_test:
