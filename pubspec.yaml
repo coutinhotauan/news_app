@@ -16,6 +16,7 @@ dependencies:
   dio: ^5.4.0
   mockito: ^5.4.4
   http: ^1.1.0
+  pretty_http_logger: ^1.0.3
 
 dev_dependencies:
   flutter_test:
