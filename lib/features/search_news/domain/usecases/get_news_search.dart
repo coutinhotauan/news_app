@@ -7,7 +7,7 @@ import 'package:news_app/features/search_news/domain/repository/news_search_repo
 
 class GetNewsSearch extends UseCase<NewsSearch, Params>{
    final NewsSearchRepository repository;
-   GetNewsSearch(this.repository);
+   GetNewsSearch({required this.repository});
 
    @override
     Future<Either<Failure, NewsSearch>> call(Params params) async{
