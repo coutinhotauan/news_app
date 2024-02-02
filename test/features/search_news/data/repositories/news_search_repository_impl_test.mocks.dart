@@ -8,7 +8,7 @@ import 'dart:async' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:news_app/features/search_news/data/datasources/news_search_datasource.dart'
     as _i3;
-import 'package:news_app/features/search_news/domain/entities/news_search.dart'
+import 'package:news_app/features/search_news/data/models/news_search_model.dart'
     as _i2;
 
 // ignore_for_file: type=lint
@@ -24,8 +24,9 @@ import 'package:news_app/features/search_news/domain/entities/news_search.dart'
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeNewsSearch_0 extends _i1.SmartFake implements _i2.NewsSearch {
-  _FakeNewsSearch_0(
+class _FakeNewsSearchModel_0 extends _i1.SmartFake
+    implements _i2.NewsSearchModel {
+  _FakeNewsSearchModel_0(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -44,17 +45,19 @@ class MockNewsSearchDataSource extends _i1.Mock
   }
 
   @override
-  _i4.Future<_i2.NewsSearch> getNews(String? keyword) => (super.noSuchMethod(
+  _i4.Future<_i2.NewsSearchModel> getNews(String? keyword) =>
+      (super.noSuchMethod(
         Invocation.method(
           #getNews,
           [keyword],
         ),
-        returnValue: _i4.Future<_i2.NewsSearch>.value(_FakeNewsSearch_0(
+        returnValue:
+            _i4.Future<_i2.NewsSearchModel>.value(_FakeNewsSearchModel_0(
           this,
           Invocation.method(
             #getNews,
             [keyword],
           ),
         )),
-      ) as _i4.Future<_i2.NewsSearch>);
+      ) as _i4.Future<_i2.NewsSearchModel>);
 }

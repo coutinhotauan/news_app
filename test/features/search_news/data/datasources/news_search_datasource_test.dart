@@ -7,20 +7,23 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:news_app/core/error/exception.dart';
 import 'package:news_app/features/search_news/data/datasources/news_search_datasource.dart';
+import 'package:news_app/features/search_news/data/models/news_search_model.dart';
 import 'package:news_app/features/search_news/domain/entities/news_search.dart';
+import 'package:pretty_http_logger/pretty_http_logger.dart';
 
 import '../../../../fixtures/fixture_reader.dart';
-import 'news_search_datasource_test.mocks.dart';
 import 'package:http/http.dart' as http;
 
-@GenerateMocks([http.Client])
+import 'news_search_datasource_test.mocks.dart';
+
+@GenerateMocks([HttpWithMiddleware])
 void main() {
   late NewsSearchDataSourceImpl datasource;
-  late MockClient client;
+  late MockHttpWithMiddleware client;
 
   setUp(
     () {
-      client = MockClient();
+      client = MockHttpWithMiddleware();
       datasource = NewsSearchDataSourceImpl(client: client);
     },
   );
@@ -30,7 +33,7 @@ void main() {
   const tUrl = "url";
 
   final tNewsSearch =
-      NewsSearch.fromJson(json.decode(fixture("news_search.json")));
+      NewsSearchModel.fromJson(json.decode(fixture("news_search.json")));
 
   Map<String, dynamic> parameters = {
     "apiKey": "key",

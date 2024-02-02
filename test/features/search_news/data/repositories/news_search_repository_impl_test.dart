@@ -5,6 +5,7 @@ import 'package:mockito/mockito.dart';
 import 'package:news_app/core/error/exception.dart';
 import 'package:news_app/core/error/failures.dart';
 import 'package:news_app/features/search_news/data/datasources/news_search_datasource.dart';
+import 'package:news_app/features/search_news/data/models/news_search_model.dart';
 import 'package:news_app/features/search_news/data/repositories/news_search_repository_impl.dart';
 import 'package:news_app/features/search_news/domain/entities/news_search.dart';
 
@@ -21,7 +22,7 @@ void main() {
   });
 
   const tKeyword = "keyword";
-  final tNewsSearch = NewsSearch.fromJson(
+  final tNewsSearch = NewsSearchModel.fromJson(
     const {
       "status": "ok",
       "totalResults": 13473,
