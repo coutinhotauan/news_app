@@ -1,26 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app/features/search_news/presentation/bloc/news_search_cubit.dart';
-import 'package:news_app/features/search_news/presentation/pages/news_page.dart';
-import 'package:news_app/injector_container.dart';
-import 'injector_container.dart' as di;
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:news_app/app_modular.dart';
+import 'package:news_app/app_widget.dart';
 
 void main() {
-  di.init();
-
   runApp(
-    BlocProvider(
-      create: (context) => sl<NewsSearchCubit>(),
-      child: const MainApp(),
+    ModularApp(
+      module: AppModule(), 
+      child: const AppWidget(),
     ),
   );
-}
-
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(home: NewsPage());
-  }
 }
