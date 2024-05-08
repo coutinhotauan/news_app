@@ -18,6 +18,8 @@ dependencies:
   http: ^1.1.0
   pretty_http_logger: ^1.0.3
   flutter_modular: ^6.3.3
+  ds:
+    path: "packages/ds"
 
 dev_dependencies:
   flutter_test:
