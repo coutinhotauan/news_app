@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:news_app/features/search_news/domain/entities/news_search.dart';
 
 class NewsSearchModel extends NewsSearch {
@@ -150,8 +152,7 @@ class ArticlesModel extends Articles {
 }
 
 class SourceModel extends Source {
-  SourceModel({required String? id, required String? name})
-      : super(id: id, name: name);
+  SourceModel({required String? id, required String? name}) : super(id: id, name: name);
 
   SourceModel.fromJson(Map<String, dynamic> json) {
     id = json["id"];
